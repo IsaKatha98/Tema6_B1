@@ -36,40 +36,22 @@ public class Ejercicio3 {
 		// Declaramos las variables
 		int contadorEspacios = 0;
 		int index = 0;// Indice la posición en la que nos encontramos.
-		int indexEspacio = 0;
-		int indexAux;
 
 		// Hacemos un bucle que recorra la frase.
 		while (index < frase.length()) {
 
-			// En caso de que la posición sea igual a 0, hacemos una condición de que
-			// empiece a
-			// contar los espacios desde el principio.
-			if (index == 0) {
-
-				// Buscamos el primer espacio.
-				indexEspacio = frase.indexOf(' ');
-
-				// Contamos uno al contador de espacios.
+			//Comparamos si el caracter en esa posicion es igual a ' '.
+			if (frase.charAt(index)==' ') {
+				
+				//Aumentamos en 1 el contador de espacios.
 				contadorEspacios++;
-
-				// En caso de que sea una posición distinta de 0.
-			} else {
-
-				indexAux = indexEspacio;
-
-				// Buscamos un espacio, desde la última posición en la que hubo uno.
-				indexEspacio = frase.indexOf(' ', indexAux);
-
-				// Contamos uno al contador de espacios.
-				contadorEspacios++;
-
 			}
-
+			
 			// Contamos uno al carácter para que el bucle avance.
 			index++;
 		}
 
+		//Devolvemos el resultado.
 		return contadorEspacios;
 	}
 
