@@ -29,7 +29,7 @@ public class Ejercicio6 {
 		contadorPalabra = Ejercicio6.cuentaPalabra(frase, palabra);
 
 		// Imprimimos el resultado.
-		System.out.println("En la frase anterior hay: " + contadorPalabra + " espacios.");
+		System.out.println("En la frase anterior se repiten: " + contadorPalabra + " veces la palabra seleccionada.");
 
 		// Cerramos el escáner.
 		sc.close();
@@ -40,20 +40,15 @@ public class Ejercicio6 {
 		// Declaramos las variables
 		int contadorPalabra = 0;
 		int indexPalabra=0;
-		int index=0;
+		int palabraBuscar;
+		int indexAux=0;
 
 		// Hacemos un bucle while que vaya buscando que recorra la frase.
 		// Hacemos un bucle que recorra la frase.
-		while (index < frase.length()) {
+		while (palabraBuscar!=-1) {
 
 			// Buscamos la palabra en la frase.
 
-			indexPalabra = frase.indexOf(palabra, indexPalabra);
-			
-			if (indexPalabra>0) {
-				
-				contadorPalabra++;
-			}
 
 
 			// Contamos uno al carácter para que el bucle avance.
@@ -63,5 +58,7 @@ public class Ejercicio6 {
 		// Devolvemos el resultado.
 		return contadorPalabra;
 	}
+
+	
 
 }
