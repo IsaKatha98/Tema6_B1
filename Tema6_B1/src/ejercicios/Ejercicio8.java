@@ -21,6 +21,7 @@ public class Ejercicio8 {
 		// Declaramos las variables necesarias.
 		String frase;
 		boolean idioma= true;
+		String mensaje;
 
 		// Creamos un escáner.
 		Scanner sc = new Scanner(System.in);
@@ -28,7 +29,7 @@ public class Ejercicio8 {
 		// Pedimos la frase
 		System.out.println("Introduzca una frase: ");
 		frase = sc.nextLine();
-
+	
 		//Comprobamos que es el idioma de Javalandia.
 		idioma= Ejercicio8.compruebaIdioma(frase);
 		
@@ -36,8 +37,10 @@ public class Ejercicio8 {
 			
 			System.out.println("El usuario está hablando en el idioma de Javalandia.");
 			
+			mensaje= Ejercicio8.divideFrase(frase);
 			
-	
+			System.out.println("El mensaje original: "+mensaje);
+		
 		} else  {
 			
 			System.out.println("El usuario no está hablando en el idioma de Javalandia.");
@@ -46,8 +49,8 @@ public class Ejercicio8 {
 	
 	public static boolean compruebaIdioma (String frase) {
 		
-		String prefijo ="Javalín, javalón";
-		String sufijo="javalén, len, len";
+		String prefijo ="java";
+		String sufijo="len";
 		boolean idioma= false;
 		
 		if (frase.startsWith(prefijo)) {
@@ -61,6 +64,35 @@ public class Ejercicio8 {
 		}
 		
 		return idioma;
+		
+	}
+	
+	public static String divideFrase(String frase) {
+		
+		String subCad;
+		
+		//Ahora tenemos que identificar si es prefijo o sufijo.
+		//En caso de que hable con el sufijo.
+		if (frase.contains("len")) {
+			
+			//La subcadena empezará desde el final - 17.
+			subCad= frase.substring(0, frase.length()-17);
+			
+			//Le quitamos cualquier espacio que sobre.
+			subCad= subCad.trim();
+		
+		//En caso de que hable con el prefijo.
+		} else {
+			
+			//La subcadena irá hasta la posición.
+			subCad= frase.substring(16 );
+			
+			//Le quitamos cualquier espacio que sobre.
+			subCad= subCad.trim();
+			
+		}
+		
+		return subCad;
 		
 	}
 

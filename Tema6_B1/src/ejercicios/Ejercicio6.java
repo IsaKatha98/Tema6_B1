@@ -39,20 +39,33 @@ public class Ejercicio6 {
 
 		// Declaramos las variables
 		int contadorPalabra = 0;
-		int indexPalabra=0;
-		int palabraBuscar;
-		int indexAux=0;
+		int index=0;
+		int palabraBuscar=0;
+		String subCad;
 
 		// Hacemos un bucle while que vaya buscando que recorra la frase.
 		// Hacemos un bucle que recorra la frase.
-		while (palabraBuscar!=-1) {
-
+		while (index<=frase.length()) {
+			
+			//Hacemos que subcad sea la frase, para que se vaya empequeñeciendo.
+			subCad=frase;
+			
 			// Buscamos la palabra en la frase.
+			palabraBuscar=frase.indexOf(palabra);
+			
+			//En caso de que exista, metemos lo que ya llevamos recorrido en una subcadena.
+			if (palabraBuscar!=-1) {
+				
+				subCad=frase.substring(0, palabraBuscar);
+				
+				//Añadimos 1 al contador.
+				contadorPalabra++;
+	
+			}
 
-
-
-			// Contamos uno al carácter para que el bucle avance.
+			//Avanzamos uno en la posición del bucle.
 			index++;
+			
 		}
 		
 		// Devolvemos el resultado.
