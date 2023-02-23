@@ -3,7 +3,12 @@ package ejercicios;
 import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio9 {
+/*
+ * Realizar un programa descodificador. La solución es tan sencilla como utilizar la función 
+ * diseñada en el ejercicio anterior intercambiando los conjuntos entre sí.
+ */
+
+public class Ejercicio10 {
 
 	public static void main(String[] args) {
 
@@ -21,9 +26,9 @@ public class Ejercicio9 {
 		// Pedimos la frase
 		System.out.println("Introduzca una palabra: ");
 		mensaje = sc.next();
-		
-		//Ignoramos las mayúsculas.
-		mensaje= mensaje.toLowerCase();
+
+		// Ignoramos las mayúsculas.
+		mensaje = mensaje.toLowerCase();
 
 		// Recorremos con un bucle for la palabra y sacamos las posiciones y las
 		// comparamos con el conjunto1.
@@ -39,34 +44,35 @@ public class Ejercicio9 {
 			mensajeC[i] += Ejercicio9.codifica(sub1, sub2, c);
 
 		}
-		
-		//Pasamos el mensajeC a un String y lo imprimimos.
-		codigo=String.copyValueOf(mensajeC);
+
+		// Pasamos el mensajeC a un String y lo imprimimos.
+		codigo = String.copyValueOf(mensajeC);
 
 		System.out.println(mensajeC);
 
 	}
 
-	public static char codifica(char[] conjunto1, char[] conjunto2, char c) {
-		
+	public static char codifica(char[] conjunto2, char[] conjunto1, char c) {
+
 		String sub1;
 		int indexC;
-		
-		//Pasamos el conjunto 1 a String 
-		sub1= String.valueOf(conjunto1);
-		
-		//Buscamos si c existe en sub1.
-		indexC= sub1.indexOf(c);
-		
-		//Si indexC es un valor distinto de -1.
-		if (indexC!=-1) {
-			
-			//Sustituimos el valor de c por que la posición correspondiente en el conjunto2.
-			c=conjunto2[indexC];
-			
+
+		// Pasamos el conjunto 1 a String
+		sub1 = String.valueOf(conjunto1);
+
+		// Buscamos si c existe en sub1.
+		indexC = sub1.indexOf(c);
+
+		// Si indexC es un valor distinto de -1.
+		if (indexC != -1) {
+
+			// Sustituimos el valor de c por que la posición correspondiente en el
+			// conjunto2.
+			c = conjunto1[indexC];
+
 		}
-		
-		//Devolvemos c.
+
+		// Devolvemos c.
 		return c;
 	}
 

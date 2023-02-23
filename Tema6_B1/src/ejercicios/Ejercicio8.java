@@ -49,16 +49,11 @@ public class Ejercicio8 {
 	
 	public static boolean compruebaIdioma (String frase) {
 		
-		String prefijo ="java";
-		String sufijo="len";
+		String prefijo ="Javalín, javalón";
+		String sufijo="javalén, len, len";
 		boolean idioma= false;
 		
-		if (frase.startsWith(prefijo)) {
-			
-			idioma= true;
-		}
-		
-		if (frase.endsWith(sufijo)) {
+		if (frase.startsWith(prefijo)||(frase.endsWith(sufijo))){
 			
 			idioma= true;
 		}
