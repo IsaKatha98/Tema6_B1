@@ -1,6 +1,5 @@
 package ejercicios;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class Ejercicio13 {
@@ -31,13 +30,16 @@ public class Ejercicio13 {
 		// Pasamos frase a un char[]
 		letras = frase.toCharArray();
 
-		// Imprimimos el resultado.
+		// Recorremos el array.
 		for (int index = 0; index < letras.length; index++) {
 
+			//Pedimos el contador de esa letra.
 			contador = contador(letras, index);
-			
+
+			//Comprobamos si la letra en esa posición ya se ha repetido.
 			repe = compruebaLetrasRepes(index, letras);
 
+			//En caso de que NO se haya repetido, imprimimos el resultado.
 			if (!repe) {
 
 				System.out.println(letras[index] + " aparece " + contador + " veces.");
@@ -45,31 +47,54 @@ public class Ejercicio13 {
 
 		}
 
+		// Cerramos el escáner.
+		sc.close();
 	}
+	
+	/**
+	 * Función que comprueba si en un array hay letras que se han repetido, 
+	 * comprobando desde el principio del array hasta una posición determinada.
+	 * 
+	 * @param index
+	 * @param letras
+	 * @return devuelve un booleano que en caso de que haya letras repetidas es true,
+	 * 			en caso de que no; pues devuelve false.
+	 */
 
 	public static boolean compruebaLetrasRepes(int index, char[] letras) {
 
 		boolean repe = false;
-		int cont=0;
-		
-		//Vamos a recorrer letras desde el principio hasta la posicion index.
-		//Hacemos un bucle que continuará mientras el contador sea menor que el índice introducido.
-		while (cont<index) {
-			
-			//Comparamos si la letra en la posición contador es la misma que la letra en la posicion index.
-			if (letras[cont]==letras[index]) {
-				
-				//En caso afirmativo, esa letra se repite y nos salimos del bucle.
-				repe=true;
-			} 
-			
+		int cont = 0;
+
+		// Vamos a recorrer letras desde el principio hasta la posicion index.
+		// Hacemos un bucle que continuará mientras el contador sea menor que el índice
+		// introducido.
+		while (cont < index) {
+
+			// Comparamos si la letra en la posición contador es la misma que la letra en la
+			// posicion index.
+			if (letras[cont] == letras[index]) {
+
+				// En caso afirmativo, esa letra se repite y nos salimos del bucle.
+				repe = true;
+			}
+
 			cont++;
-			
+
 		}
 
 		return repe;
 	}
 
+	/**
+	 * Función que cuenta las veces que una letra se repite. Esto se hace comparando
+	 * desde una posición concreta con el resto del array.
+	 * 
+	 * @param letras
+	 * @param index
+	 * @return devuelve un int que cuenta las veces que una letra se repite.
+	 */
+	
 	public static int contador(char[] letras, int index) {
 
 		// Inicializamos el array a 1 ya que cualquier caracter aparece por lo menos 1

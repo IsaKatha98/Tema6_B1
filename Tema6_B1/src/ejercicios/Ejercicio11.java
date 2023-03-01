@@ -34,7 +34,17 @@ public class Ejercicio11 {
 		System.out.println("La palabra más larga de la frase anterior es: " + palabraMax + " con un total de "
 				+ palabraMax.length() + " letras");
 
+		// Cerramos el escáner.
+		sc.close();
+
 	}
+
+	/**
+	 * Función que recorre la frase e identidica la palabra más larga.
+	 * 
+	 * @param palabras
+	 * @return devuelve un String que es la palabra más larga de la frase.
+	 */
 
 	public static String identificaPalabras(String[] palabras) {
 

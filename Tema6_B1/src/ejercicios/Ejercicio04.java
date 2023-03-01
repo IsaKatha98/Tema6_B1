@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio4 {
+public class Ejercicio04 {
 
 	/*
 	 * Diseñar una función a la que se le pase una cadena de caracteres y la
@@ -23,7 +23,7 @@ public class Ejercicio4 {
 		System.out.println("Introduzca una frase: ");
 		frase = sc.nextLine();
 
-		cadInvert = Ejercicio4.invierteCadena(frase);
+		cadInvert = Ejercicio04.invierteCadena(frase);
 
 		// Imprimimos el resultado.
 		System.out.println("Frase invertida: " + cadInvert);
@@ -32,6 +32,13 @@ public class Ejercicio4 {
 		sc.close();
 	}
 
+	/**
+	 * Función que recorre una frase desde el final y va concatenando los caracteres de dicha frase.
+	 * 
+	 * @param frase
+	 * @return devuelve un String con la cadena invertida.
+	 */
+	
 	public static String invierteCadena(String frase) {
 
 		String cadenaInvertida = "";

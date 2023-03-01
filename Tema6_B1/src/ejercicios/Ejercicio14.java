@@ -72,18 +72,31 @@ public class Ejercicio14 {
 			System.out.println("Ha ganado el jugador 2, ya que ha adivinado la palabra. " );
 
 		}
+		
+		//Cerramos el escáner.
+		sc.close();
 
 	}
 
+	/**
+	 * Función que desordena una palabra. Esto se hace sacando posiciones aleatorias de la palabra y 
+	 * concatenando los valores de esas posiciones hasta que el tamaño de esa "nueva" palabra coincide 
+	 * con la palabra original.
+	 * 
+	 * @param palabra
+	 * @return devuelve un String que es una palabra desordenada.
+	 */
+	
 	public static String desordenaPalabra(String palabra) {
 
 		int index;
 		char car;
 		String palabraD = "";
 		int usados[] = new int[0];
-		boolean repe;
+		boolean repe=true;
 
-		// Hacemos un for que recorra la palabra.
+		// Hacemos un bucle while que se rompa cuando el tamaño de la palabra desordenada coincida
+		// con el tamaño de la palabra original.
 		while (!(palabraD.length() == palabra.length())) {
 
 			// Hacemos un random de la posición.
@@ -94,7 +107,7 @@ public class Ejercicio14 {
 
 			// Añadimos el caracter, solo cuando repe es false. También lo añadimos a la
 			// tabla usado.
-			if (repe == false) {
+			if (!repe) {
 
 				// Ahora vamos buscando el caracter que haya en esa posición random.
 				car = palabra.charAt(index);
@@ -113,6 +126,16 @@ public class Ejercicio14 {
 		return palabraD;
 	}
 
+	/**
+	 * Función que comprueba si una posición ya ha sido repetida. Esto lo hace 
+	 * buscando en un array que se va haciendo conforme se van gastantdo posiciones.
+	 * 
+	 * @param index
+	 * @param usados
+	 * @return devuelve un booleano que si es true es que se la posición se repite, 
+	 * 			y cuando es false, es que no se ha repetido.
+	 */
+	
 	public static boolean comprobarRepes(int index, int[] usados) {
 
 		boolean repe = false;

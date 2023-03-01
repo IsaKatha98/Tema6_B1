@@ -1,6 +1,6 @@
 package ejercicios;
 
-public class Ejercicio1 {
+public class Ejercicio01 {
 	
 	/*
 	 * Introducir por teclado dos frases e indicar cuál de ellas es la más corta, 

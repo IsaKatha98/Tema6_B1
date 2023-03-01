@@ -56,18 +56,32 @@ public class Ejercicio12 {
 
 	}
 
+	/**
+	 * Función que compara dos palabras de la misma longitud para saber si son anagramas.
+	 * Esto lo hace cogiendo el valor de una posición de la palabra 1 y la va comparando con
+	 * los distintos valores de palabra2.
+	 * 
+	 * @param pab1
+	 * @param pab2
+	 * @return devuelve un booleano que si es true, nos dice que las palabras son anagramas;
+	 * 			y si es false, pues no lo son.
+	 */
 	public static boolean comparaPalabras(String pab1, String pab2) {
 
+		//Pasamos las dos palabras a arrays.
 		char[] p1 = pab1.toCharArray();
 		char[] p2 = pab2.toCharArray();
 
 		boolean anagrama = false;
 
 		// Recorremos las palabras por caracteres y los comparamos.
+		//Aquí recorremos la palabra1.
 		for (int index1 = 0; index1 < pab1.length(); index1++) {
 
+			//Aquí recorremos la palabra2.
 			for (int index2 = 0; index2 < pab2.length(); index2++) {
 
+				//Comparamos si el valor de una posición de p1, la podemos encontrar en p2.
 				if (p1[index1] == p2[index2]) {
 
 					anagrama = true;

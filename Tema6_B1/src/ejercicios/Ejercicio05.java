@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio5 {
+public class Ejercicio05 {
 
 	/*
 	 * Introducir por teclado una frase palabra a palabra, y mostrar la frase

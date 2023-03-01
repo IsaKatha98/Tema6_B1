@@ -13,11 +13,11 @@ public class Ejercicio15 {
 	public static void main(String[] args) {
 
 		// Declaramos las variables necesarias.
-		String palabra="";
+		String palabra = "";
 		String palabraD;
 		String respuesta;
 		int contador = 10;
-		char[] oculta= new char[0];
+		char[] oculta = new char[0];
 
 		// Creamos un escáner.
 		Scanner sc = new Scanner(System.in);
@@ -39,8 +39,7 @@ public class Ejercicio15 {
 
 			System.out.println("Tienes " + contador + " intentos. Introduce tu palabra:  ");
 			respuesta = sc.next();
-			
-	
+
 			// Si contraseña y respuesta son iguales.
 			if (respuesta.equals(palabra)) {
 
@@ -57,15 +56,16 @@ public class Ejercicio15 {
 				contador--;
 
 			}
-			
+
+			// Pedimos las coincidencias de la palabra.
 			System.out.println("A continuación, se muestra cuántas letras han coincidido.");
-			
-			oculta= rellenaPalabraOculta(oculta, palabra);
-			
-			oculta= comparaPalabras (oculta, palabra, respuesta);
-			
+
+			oculta = rellenaPalabraOculta(oculta, palabra);
+
+			oculta = comparaPalabras(oculta, palabra, respuesta);
+
 			System.out.println(Arrays.toString(oculta));
-			
+
 		} // Cuando el contador llegue a 10 o la respuesta sea igual que la contraseña se
 			// sale del bucle.
 		while (contador != 0);
@@ -80,7 +80,19 @@ public class Ejercicio15 {
 
 		}
 
+		// Cerramos el escáner.
+		sc.close();
+
 	}
+
+	/**
+	 * Función que desordena una palabra. Esto se hace sacando posiciones aleatorias
+	 * de la palabra y concatenando los valores de esas posiciones hasta que el
+	 * tamaño de esa "nueva" palabra coincide con la palabra original.
+	 * 
+	 * @param palabra
+	 * @return devuelve un String que es una palabra desordenada.
+	 */
 
 	public static String desordenaPalabra(String palabra) {
 
@@ -120,6 +132,16 @@ public class Ejercicio15 {
 		return palabraD;
 	}
 
+	/**
+	 * Función que comprueba si una posición ya ha sido repetida. Esto lo hace
+	 * buscando en un array que se va haciendo conforme se van gastantdo posiciones.
+	 * 
+	 * @param index
+	 * @param usados
+	 * @return devuelve un booleano que si es true es que se la posición se repite,
+	 *         y cuando es false, es que no se ha repetido.
+	 */
+
 	public static boolean comprobarRepes(int index, int[] usados) {
 
 		boolean repe = false;
@@ -140,41 +162,60 @@ public class Ejercicio15 {
 
 		return repe;
 	}
-	
-	public static char[] rellenaPalabraOculta (char[] oculta, String palabra) {
-		
-		//Hacemos una copia de oculta y con el tamaño de palabra.
-		oculta= Arrays.copyOf(oculta, palabra.length());
-		
-		//Lo rellenamos con asteriscos.
+
+	/**
+	 * Función que rellena el array con asteriscos.
+	 * 
+	 * @param oculta
+	 * @param cont
+	 * @return devuelve un array char de asteriscos
+	 */
+
+	public static char[] rellenaPalabraOculta(char[] oculta, String palabra) {
+
+		// Hacemos una copia de oculta y con el tamaño de palabra.
+		oculta = Arrays.copyOf(oculta, palabra.length());
+
+		// Lo rellenamos con asteriscos.
 		Arrays.fill(oculta, '*');
-		
+
 		return oculta;
-		
+
 	}
-	
-	public static char[]comparaPalabras (char [] oculta, String palabra, String respuesta) {
-		
-		char [] letrasPalabra;
+
+	/**
+	 * Función que compara los arrays de las dos palabras. En caso de que haya
+	 * coincidencias se destapan las posiciones coincidentes.
+	 * 
+	 * @param oculta
+	 * @param cont
+	 * @param respuesta
+	 * @return devuelve un char[] con asteriscos y letras destapadas.
+	 */
+
+	public static char[] comparaPalabras(char[] oculta, String palabra, String respuesta) {
+
+		char[] letrasPalabra;
 		char[] letrasRespuesta;
-		
-		//Pasamos palabra y respuesta a un array.
-		letrasPalabra= palabra.toCharArray();
-		
-		letrasRespuesta=respuesta.toCharArray();
-		
-		//REcorremos la palabra.
-		for (int i=0; i<letrasPalabra.length; i++) {
-			
-			//Si en la misma posición, los valores de ambas tablas son iguales, destapamos esa posición.
-			if (letrasPalabra[i]==letrasRespuesta[i]) {
-				
-				oculta[i]=letrasPalabra[i];
+
+		// Pasamos palabra y respuesta a un array.
+		letrasPalabra = palabra.toCharArray();
+
+		letrasRespuesta = respuesta.toCharArray();
+
+		// REcorremos la palabra.
+		for (int i = 0; i < letrasPalabra.length; i++) {
+
+			// Si en la misma posición, los valores de ambas tablas son iguales, destapamos
+			// esa posición.
+			if (letrasPalabra[i] == letrasRespuesta[i]) {
+
+				oculta[i] = letrasPalabra[i];
 			}
 		}
-		
-		return oculta;	
-		
+
+		return oculta;
+
 	}
 
 }

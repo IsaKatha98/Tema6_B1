@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio6 {
+public class Ejercicio06 {
 
 	/*
 	 * Diseñar un programa que solicite al usuario una frase y una palabra. A
@@ -26,7 +26,7 @@ public class Ejercicio6 {
 		System.out.println("Introduzca una palabra de esa frase: ");
 		palabra = sc.next();
 
-		contadorPalabra = Ejercicio6.cuentaPalabra(frase, palabra);
+		contadorPalabra = Ejercicio06.cuentaPalabra(frase, palabra);
 
 		// Imprimimos el resultado.
 		System.out.println("En la frase anterior se repiten: " + contadorPalabra + " veces la palabra seleccionada.");
@@ -35,11 +35,19 @@ public class Ejercicio6 {
 		sc.close();
 	}
 
+	/**
+	 * Función que recorre la frase introducida, busca la palabra indicada y cuenta cuántas veces
+	 * se repite dicha palabra.
+	 * 
+	 * @param frase
+	 * @param palabra
+	 * @return devuleve un int siendo un contador de una palabra específica.
+	 */
+	
 	public static int cuentaPalabra(String frase, String palabra) {
 
 		// Declaramos las variables
 		int contadorPalabra = 0;
-		int index=0;
 		int palabraBuscar=0;
 		String subCad;
 

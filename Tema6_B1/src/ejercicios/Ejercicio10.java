@@ -16,9 +16,8 @@ public class Ejercicio10 {
 		char[] sub1 = { 'e', 'i', 'k', 'm', 'p', 'q', 'r', 's', 't', 'u', 'w' };
 		char[] sub2 = { 'p', 'v', 'i', 'u', 'm', 't', 'e', 'r', 'k', 'q', 's' };
 		char c;
-		char[] mensajeC = new char[0];
-		String mensaje;
-		String codigo;
+		char[] mensajeC = new char[0]; //Mensaje codificado.
+		String mensaje; //Mensaje que introduce el usuario.
 
 		// Creamos un escáner.
 		Scanner sc = new Scanner(System.in);
@@ -41,16 +40,26 @@ public class Ejercicio10 {
 			mensajeC = Arrays.copyOf(mensajeC, mensajeC.length + 1);
 
 			// Rellenamos una tabla con los valores de c en la posición que indica i.
-			mensajeC[i] += Ejercicio9.codifica(sub1, sub2, c);
+			mensajeC[i] += Ejercicio09.codifica(sub1, sub2, c);
 
 		}
 
 		// Pasamos el mensajeC a un String y lo imprimimos.
-		codigo = String.copyValueOf(mensajeC);
+		System.out.println(String.copyValueOf(mensajeC));
 
-		System.out.println(mensajeC);
+		// Cerramos el escáner.
+		sc.close();
 
 	}
+
+	/**
+	 * Función que pasa un caracter a otro.
+	 * 
+	 * @param conjunto2
+	 * @param conjunto1
+	 * @param c
+	 * @return devuelve un caracter
+	 */
 
 	public static char codifica(char[] conjunto2, char[] conjunto1, char c) {
 

@@ -2,7 +2,7 @@ package ejercicios;
 
 import java.util.Scanner;
 
-public class Ejercicio3 {
+public class Ejercicio03 {
 
 	/*
 	 * Diseña una aplicación que pida al usuario que introduzca una frase por
@@ -22,7 +22,7 @@ public class Ejercicio3 {
 		System.out.println("Introduzca una frase: ");
 		frase = sc.nextLine();
 
-		contadorEspacios = Ejercicio3.cuentaEspacios(frase);
+		contadorEspacios = Ejercicio03.cuentaEspacios(frase);
 
 		// Imprimimos el resultado.
 		System.out.println("En la frase anterior hay: " + contadorEspacios + " espacios.");
@@ -31,6 +31,12 @@ public class Ejercicio3 {
 		sc.close();
 	}
 
+	/**
+	 * Función que cuenta los espacios que hay en una palabra.
+	 * @param frase
+	 * @return devuelve un int con el número de espacios.
+	 */
+	
 	public static int cuentaEspacios(String frase) {
 
 		// Declaramos las variables

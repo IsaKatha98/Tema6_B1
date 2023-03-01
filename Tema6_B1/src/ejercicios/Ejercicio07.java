@@ -1,9 +1,8 @@
 package ejercicios;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-public class Ejercicio7 {
+public class Ejercicio07 {
 	
 	/*
 	 * Realizar un programa que lea una frase del teclado y nos indique si es palíndroma, es decir, 
@@ -27,10 +26,10 @@ public class Ejercicio7 {
 		frase = sc.nextLine();
 		
 		//Leemos la frase y la limpiamos de mayúsculas y tildes.
-		frase=Ejercicio7.limpiaCadena(frase);
+		frase=Ejercicio07.limpiaCadena(frase);
 
 		//Leemos la frase del revés.
-		cadInvert=Ejercicio7.invierteCadena(frase);
+		cadInvert=Ejercicio07.invierteCadena(frase);
 		
 		//Comparamos si ambas cadenas son iguales.
 		if (frase.equalsIgnoreCase(cadInvert)) {
@@ -45,6 +44,13 @@ public class Ejercicio7 {
 		//Cerramos el escáner.
 		sc.close();
 	}
+	
+	/**
+	 * Función que limpia la cadena de mayúsculas, acentos y espacios en blanco.
+	 * 
+	 * @param frase
+	 * @return devuelve un String de una cadena sin mayúsculas, acentos o espacios en blanco.
+	 */
 	
 	public static String limpiaCadena( String frase) {
 
@@ -83,6 +89,13 @@ public class Ejercicio7 {
 		return frase;
 	}
 
+	/**
+	 * Función que recorre una frase desde el final y va concatenando los caracteres de dicha frase.
+	 * 
+	 * @param frase
+	 * @return devuelve un String con la cadena invertida.
+	 */
+	
 	public static String invierteCadena(String frase) {
 
 		String cadenaInvertida = "";
